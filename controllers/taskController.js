@@ -29,32 +29,34 @@ export const create = async function (req, res, next) {
 		next(error)
 	}
 }
-export const update= async function (req, res, next) {
+export async function update(req, res, next) {
 	try {
-		const {user: {_id: userId}, body: data} = req
-
-		const task = await taskService.update(userId, data)
-		
-		res.status(200).send({ 
-			message: "Task updated successfully", 
-			data: task
-		})
+	  let {
+		body: data,
+		params: { id: taskId},
+	  } = req;
+  
+	  const task = await taskService.update(taskId, data);
+  
+	  res.status(200).json({
+		message: 'Task updated successfully',
+		data: task,
+	  });
 	} catch (error) {
 		next(error)
 	}
-}
-
-export const deleteTask = async function (req, res, next) {
+  }
+  export async function deleteTask(req, res, next) {
 	try {
-		const {user: {_id: userId}, body: data} = req
-
-		const task = await taskService.deleteTask(userId, data)
-		
-		res.status(200).send({ 
-			message: "Task deleted successfully", 
-			data: task
-		})
+	  const {taskId } = req.params;
+  
+	  const task = await taskService.deleteTask(taskId);
+  
+	  res.status(200).json({
+		message: 'Task deleted successfully',
+		data: task,
+	  });
 	} catch (error) {
 		next(error)
 	}
-}
+  }

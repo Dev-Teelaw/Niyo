@@ -10,7 +10,7 @@ const router = Router()
 router.get('/', requireLoggedInUser, index)
 router.post('/', requireLoggedInUser, validateRequestBody(validateCreate), create)
 router.put('/:id', requireLoggedInUser, validateRequestBody(validateCreate),update )
-router.delete('/:id', requireLoggedInUser, validateRequestBody(validateCreate), deleteTask)
+router.delete('/:id', requireLoggedInUser,  deleteTask)
 
 
 export default router

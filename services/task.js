@@ -19,16 +19,16 @@ export const create = async (userId, data) => {
     return task
 }
 export async function update(userId, data) {
-    let task  = await TodoTask.findOne({ _id: userId });
+    let task  = await TodoTask.findById({_id:userId });
     if (!task ) throw new NotFoundError('task  not found');
   
-    task = await TodoTask.updateOne({ userId, data},data  );
+    task = await TodoTask.updateOne({ _id: userId},data );
     return task;
   }
   
-  export async function deleteTask(userId, data){
-    let task  = await TodoTask.findOne({ _id: userId });
+  export async function deleteTask( userId){
+    let task  = await TodoTask.findById({ _id: userId });
          if (!task ) throw new NotFoundError('task  not found');
-    task = await TodoTask.deleteOne({ _id: userId}, data );
+    task = await TodoTask.deleteOne({_id: userId });
     return task;
 }
