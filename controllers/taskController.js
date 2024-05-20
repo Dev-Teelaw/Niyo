@@ -48,7 +48,10 @@ export async function update(req, res, next) {
   }
   export async function deleteTask(req, res, next) {
 	try {
-	  const {taskId } = req.params;
+		let {
+
+			params: { id: taskId},
+		  } = req;
   
 	  const task = await taskService.deleteTask(taskId);
   
