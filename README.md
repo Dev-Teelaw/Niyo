@@ -39,11 +39,11 @@ Navigate to `http://localhost:<port>` to access the application. Use the default
 
 ## API Documentation
 
-<<<<<<< HEAD
+
 For detailed API documentation, please visit the [Postman Documentation] https://documenter.getpostman.com/view/20737844/2sA3QmEutm.
 =======
 For detailed API documentation, please visit the [Postman Documentation](https://documenter.getpostman.com/view/20737844/2sA3QmEutm).
->>>>>>> e44f787f1d5473cb5d9c53f2c69bba282d7c38ba
+
 
 
 
